@@ -10,6 +10,8 @@ const availableDecks = (state = [], action) => {
   }
 }
 
-export const decksReducers = {
+const decksReducers = {
   availableDecks,
 };
+
+export default decksReducers;

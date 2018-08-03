@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { createStore } from 'redux';
+import { StyleSheet } from 'react-native';
 import { Provider } from 'react-redux';
-import reducers from './reducers';
+import store from "./store";
 import Routes from './routes';
 import { AppLoading, Font } from 'expo';
 
-export default class App extends Component {
+class App extends Component {
   state = {
     fontLoaded: false
   };
@@ -32,7 +31,7 @@ export default class App extends Component {
     }
 
     return (
-      <Provider store={createStore(reducers)}>
+      <Provider store={store}>
         <Routes />
       </Provider>
     );
@@ -47,3 +46,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export default App;
